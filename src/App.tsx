@@ -20,7 +20,7 @@ export default function App() {
   useEffect(() => {
     if (splineObject) {
       splineObject.setVariable("Length", length ? length : 1);
-      splineObject.setVariable("Height", height ? length : 1);
+      splineObject.setVariable("Height", height ? height : 1);
     }
   }, [splineObject]); // 🔥 Dipendenza: aggiorna la scena quando cambiano i parametri
 
