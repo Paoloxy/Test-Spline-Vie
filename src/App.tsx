@@ -7,6 +7,7 @@ export default function App() {
   
   const length = urlParams.get('length') 
   const height = urlParams.get('height')
+  const thickness = urlParams.get('thickness')
 
   // Stati per i parametri URL
   const [splineObject, setSplineObject] = useState<any>(null);
@@ -19,8 +20,9 @@ export default function App() {
   // Aggiorna le variabili di Spline quando length/height cambiano
   useEffect(() => {
     if (splineObject) {
-      splineObject.setVariable("Length", length ? length : 1);
-      splineObject.setVariable("Height", height ? height : 1);
+      splineObject.setVariable("Length", length ? length : 100);
+      splineObject.setVariable("Height", height ? height : 100);
+      splineObject.setVariable("Thickness", thickness ? thickness : 10);
     }
   }, [splineObject]); // 🔥 Dipendenza: aggiorna la scena quando cambiano i parametri
 
